@@ -24,7 +24,7 @@ public class Message {
 
     public void setId(long id) {
         this.id = id;
-        System.out.println("In #setId");
+//        System.out.println("In #setId");
     }
 
     public String getText() {
@@ -33,6 +33,6 @@ public class Message {
 
     public void setText(String text) {
         this.text = text;
-        System.out.println("In #setText");
+//        System.out.println("In #setText");
     }
 }

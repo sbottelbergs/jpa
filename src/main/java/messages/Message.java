@@ -5,7 +5,7 @@ import javax.persistence.Id;
 
 @Entity
 public class Message {
-//    @Id
+    @Id
     private long id;
     private String text;
 
@@ -17,7 +17,7 @@ public class Message {
         this.text = text;
     }
 
-    @Id
+//    @Id
     public long getId() {
         return id;
     }

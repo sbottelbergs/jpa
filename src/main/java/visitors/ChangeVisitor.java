@@ -24,7 +24,7 @@ public class ChangeVisitor {
             final Visitor visitor = em.find(Visitor.class, id);
             System.out.println(visitor);
 
-            em.detach(visitor);
+//            em.clear();
 
             System.out.print("New name: ");
             final String newName = scanner.nextLine();

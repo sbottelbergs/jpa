@@ -17,6 +17,9 @@ public class GetMessage {
             tx.begin();
             Message message = em.find(Message.class, 1L);
             System.out.println(message.getText());
+            System.out.println("In cache: " + emf.getCache().contains(Message.class, message.getId()));
+            emf.getCache().evict(Message.class, message.getId());
+            System.out.println("In cache: " + emf.getCache().contains(Message.class, message.getId()));
             tx.commit();
         } finally {
             if (em != null) {

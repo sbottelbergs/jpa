@@ -5,6 +5,7 @@
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
                 http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
     <persistence-unit name="course" transaction-type="RESOURCE_LOCAL">
+        <shared-cache-mode>ALL</shared-cache-mode>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.mariadb.jdbc.Driver"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:mariadb://localhost:3306/StudentDB"/>
@@ -15,6 +16,9 @@
             <!-- Hibernate specific -->
             <!--            <property name="hibernate.show_sql" value="true"/>-->
             <property name="hibernate.dialect" value="org.hibernate.dialect.MariaDB103Dialect"/>
+            <property name="hibernate.cache.use_second_level_cache" value="true"/>
+            <property name="hibernate.cache.region.factory_class"
+                      value="org.hibernate.cache.ehcache.EhCacheRegionFactory"/>
         </properties>
     </persistence-unit>
     <persistence-unit name="credit" transaction-type="RESOURCE_LOCAL">
@@ -27,8 +31,6 @@
             <property name="javax.persistence.jdbc.password" value="student123"/>
 
             <property name="javax.persistence.schema-generation.database.action" value="none"/>
-            <!-- Hibernate specific -->
-            <!--            <property name="hibernate.show_sql" value="true"/>-->
             <property name="hibernate.dialect" value="org.hibernate.dialect.MariaDB103Dialect"/>
         </properties>
     </persistence-unit>

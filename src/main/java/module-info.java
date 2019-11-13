@@ -5,4 +5,5 @@ open module be.syntra.java.advanced.jpa {
     requires net.bytebuddy;
     requires java.xml.bind;
     requires java.desktop;
+    requires lombok;
 }

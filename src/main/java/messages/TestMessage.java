@@ -18,7 +18,7 @@ public class TestMessage {
     public static void main(String[] args) {
         EntityManager em = null;
         try {
-            emf = Persistence.createEntityManagerFactory("course");
+            emf = Persistence.createEntityManagerFactory("message");
             em = emf.createEntityManager();
             EntityTransaction tx = em.getTransaction();
             tx.begin();

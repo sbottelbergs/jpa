@@ -1,5 +1,6 @@
 package person;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
@@ -15,6 +16,8 @@ import java.time.LocalDate;
         })
 @SecondaryTable(name = "URLS", pkJoinColumns = @PrimaryKeyJoinColumn(name = "PERSON_ID"))
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @ToString
 public class Person {
     @Id
@@ -60,16 +63,6 @@ public class Person {
     @Column(name = "URL", table = "URLS", length = 255)
     private String homepage;
 
-    @Builder
-    public Person(String firstName, String lastName, LocalDate birthDay, GenderType gender, byte[] picture, String comment, boolean married, int age, String homepage) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.birthDay = birthDay;
-        this.gender = gender;
-        this.picture = picture;
-        this.comment = comment;
-        this.married = married;
-        this.age = age;
-        this.homepage = homepage;
-    }
+    @Embedded
+    private Address address = new Address();
 }

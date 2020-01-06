@@ -25,6 +25,13 @@ public class SavePerson {
                     .married(false)
                     .age(51)
                     .homepage("http://www.noelvaes.eu")
+                    .address(Address.builder()
+                            .street("ThorPark")
+                            .number("2")
+                            .zipCode("3600")
+                            .city("Genk")
+                            .country("Belgium")
+                            .build())
                     .build();
             em.persist(person);
             tx.commit();
